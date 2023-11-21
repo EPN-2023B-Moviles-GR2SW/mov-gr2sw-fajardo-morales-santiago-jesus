@@ -2,6 +2,7 @@ import java.util.*
 
 fun main(){
     println("Hola mundo")
+
     // INMUTABLES (NO se reasignan "=")
     val inmutable: String = "Adrian";
     // inmutable = "Vicente";
@@ -22,8 +23,12 @@ fun main(){
     val sueldo: Double = 1.2
     val estadoCivil: Char = 'C'
     val mayorEdad: Boolean = true
+
+
     // Clases Java
     val fechaNacimiento: Date = Date()
+
+
     //Switch
     val estadoCivilWhen = "C"
     when (estadoCivilWhen){
@@ -37,6 +42,7 @@ fun main(){
             println("No sabemos")
         }
     }
+
     val esSoltero = (estadoCivilWhen == "S")
     val coqueteo = if (esSoltero) "Si" else "No"
 
@@ -51,9 +57,8 @@ fun main(){
     val sumaUno = Suma(1,1)
     val sumaUno = Suma(null,1)
     val sumaUno = Suma(1,null)
-
-
 }
+
 fun imprimirNombre(nombre: String): Unit{
     println("Nombre : ${nombre}") // template strings
 }
