@@ -127,6 +127,38 @@ fun main(){
     println(respuestaFilter)
     println(respuestaFilterDos)
 
+    //OR AND
+    //OR -> ANY
+    // AND -> ALL
+
+    val respuestaAny: Boolean = arregloDinamico
+        .any { valorActual: Int ->
+            return@any (valorActual > 5)
+        }
+    println(respuestaAny) // ture
+
+    val respuestaAll: Boolean = arregloDinamico
+        .all { valorActual: Int ->
+            return@all (valorActual > 5)
+        }
+    println(respuestaAll) //false
+
+    //REDUCE -> Valor acumulado
+    //Valor acumulado = 0 (Siempre0 en lenguaje kotlin)
+    // [1. 2, 3, 4, 5] -> sumeme todos los valores
+    // iteración 1 = valorEmpieza + 1 = 0 + 1 = 1 -> Iteración 1
+    // iteración 2 = valorIteracion1 + 2 = 1 + 2 = 3 -> Iteración 2
+    // iteración 3 = valorIteracion2 + 3 = 3 + 3 = 6 -> Iteración 3
+    // iteración 4 = valorIteracion3 + 4 = 6 + 4 = 10 -> Iteración 4
+    // iteración 5 = valorIteracion4 + 5 = 10 + 5 = 15 -> Iteración 5
+
+    val respuestaReduce: Int = arregloDinamico
+        .reduce {  // acumulado = 0 -> SIEMPREEMPIEZA EN 0
+                acumulado: Int, valorActual: Int ->
+            return@reduce (acumulado + valorActual) //-> Logica negocio
+        }
+    println(respuestaReduce) // 78
+
 }
 
 fun imprimirNombre(nombre: String): Unit{
@@ -147,6 +179,8 @@ fun calcularSueldo(
     }
 
 }
+
+
 
 abstract class NumerosJava{
     protected val numeroUno: Int
@@ -234,6 +268,7 @@ class Suma( //Contructor prmario suma
             historialSumas.add(valorNuevaSuma)
         }
     }
+
 }
 
 
