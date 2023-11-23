@@ -83,10 +83,13 @@ fun main(){
 
     //FOR EACH -> Unit
     //Iterar un arreglo
+    //FORMA LARGA
     val respuestaForEach: Unit = arregloDinamico
         .forEach { valorActual: Int ->
             println("Valor actual: ${valorActual}")
         }
+
+    // FORMA CORTA
     // it (en ingles eso) significa el elemento iterado
     arregloDinamico.forEach { println("Valor actual: ${it}") }
 
@@ -101,12 +104,14 @@ fun main(){
     // 2) Nos devuelve un NUEVO ARREGLO
     // con los valores modificados
 
+    //FORMA LARGA
     val respuestaMap: List<Double> = arregloDinamico
         .map { valorActual: Int ->
             return@map valorActual.toDouble() +100.00
         }
     print(respuestaMap)
 
+    //FORMA CORTA
     val respuestaMapDos = arregloDinamico.map { it + 15 }
     println(respuestaMapDos)
 
@@ -114,12 +119,14 @@ fun main(){
     //1) Devolver una expresión TRUE or FALSe
     //2) Nuevo arreglo filtrado
 
+    //FORMA LARGA
     val respuestaFilter: List<Int> = arregloDinamico
         .filter { valorActual: Int ->
             //Expresion Condicion
             //val mayoresACinco: Boolean = valorActual > 5
             return@filter valorActual > 5
         }
+    //FORMA CORTA
     val respuestaFilterDos = arregloDinamico.filter {
         it <= 5
     }
@@ -127,7 +134,6 @@ fun main(){
     println(respuestaFilter)
     println(respuestaFilterDos)
 
-    //OR AND
     //OR -> ANY
     // AND -> ALL
 
@@ -142,6 +148,7 @@ fun main(){
             return@all (valorActual > 5)
         }
     println(respuestaAll) //false
+
 
     //REDUCE -> Valor acumulado
     //Valor acumulado = 0 (Siempre0 en lenguaje kotlin)
