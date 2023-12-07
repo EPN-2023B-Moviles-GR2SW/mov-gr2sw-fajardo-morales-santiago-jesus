@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="texto">Español y Portrait</string>
+    <color name="colorLetra">#DB7100</color>
+    <color name="colorFondo">#C2D7D4</color>
 </resources>
