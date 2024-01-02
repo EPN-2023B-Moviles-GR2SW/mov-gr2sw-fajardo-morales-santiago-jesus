@@ -2,7 +2,6 @@ package com.example.b2023gr2sw
 
 
 import android.content.DialogInterface
-import android.icu.text.LocaleDisplayNames.DialectHandling
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
@@ -33,8 +32,10 @@ class BListView : AppCompatActivity() {
         val botonAnadirListView = findViewById<Button>(R.id.btn_anadir_list_view)
         botonAnadirListView
             .setOnClickListener {
-                // click
+                anadirEntrenador(adaptador)
             }
+        registerForContextMenu(listView)
+
     }
 
     fun anadirEntrenador(
@@ -111,7 +112,7 @@ class BListView : AppCompatActivity() {
                 mostrarSnackbar("Item: ${which}")
             }
         )
-        val dialago = builder.create()
+        val dialogo = builder.create()
         dialogo.show()
     }
 
