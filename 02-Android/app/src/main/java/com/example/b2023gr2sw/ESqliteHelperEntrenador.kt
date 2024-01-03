@@ -84,4 +84,37 @@ class ESqliteHelperEntrenador (
         return if(resultadoActualizacion.toInt() == -1) false else true
 
     }
+    fun consultarEntrenadorPorID(id: Int): BEntrenador{
+        val baseDatosLectura = readableDatabase
+        val scriptConsultaLectura = """
+            SELECT * FROM ENTRENADOR WHERE ID = ?
+        """.trimIndent()
+        val parametrosConsultaLectura = arrayOf(id.toString())
+        val resultadosConsultaLectura = baseDatosLectura.rawQuery(
+            scriptConsultaLectura, //consulta
+            parametrosConsultaLectura //parámetros
+        )
+
+        //Lógica búsqueda
+        val existeUsuario = resultadosConsultaLectura.moveToFirst()
+        val usuarioEncontrado = BEntrenador(0,"","")
+        val arreglo = arrayListOf<BEntrenador>()
+        if (existeUsuario){
+            do {
+                val id = resultadosConsultaLectura.getInt(0) //Índice 0
+                val nombre = resultadosConsultaLectura.getString(1)
+                val descripcion = resultadosConsultaLectura.getString(2)
+                if (id != null){
+                    //llenar el arreglo con un nuevo BEntrenador
+                    usuarioEncontrado.id = id
+                    usuarioEncontrado.nombre = nombre
+                    usuarioEncontrado.descripcion = descripcion
+                }
+
+            }while (resultadosConsultaLectura.moveToNext())
+        }
+        resultadosConsultaLectura.close()
+        baseDatosLectura.close()
+        return usuarioEncontrado
+    }
 }
