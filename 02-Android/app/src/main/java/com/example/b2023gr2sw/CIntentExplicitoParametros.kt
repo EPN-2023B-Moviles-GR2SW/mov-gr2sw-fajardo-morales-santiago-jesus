@@ -10,6 +10,7 @@ class CIntentExplicitoParametros : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cintent_explicito_parametros)
+        //el intent ya existe por defecto
         val nombre = intent.getStringExtra("nombre")
         val apellido = intent.getStringArrayExtra("apellido")
         val edad = intent.getIntExtra("edad", 0)
@@ -18,6 +19,7 @@ class CIntentExplicitoParametros : AppCompatActivity() {
             .setOnClickListener { devolverRespuesta() }
     }
     fun devolverRespuesta(){
+        //enviamos anteriormente, y ahora revolvemos o recibimos una respuesta
         val intentDevolverParametros = Intent()
         intentDevolverParametros.putExtra("nombreModificado", "Vicente")
         intentDevolverParametros.putExtra("edadModificado",33)

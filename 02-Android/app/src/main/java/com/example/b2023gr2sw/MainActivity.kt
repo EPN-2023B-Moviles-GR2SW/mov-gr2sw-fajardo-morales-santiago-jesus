@@ -10,6 +10,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 
+
+
 class MainActivity : AppCompatActivity() {
 
     val callbackContenidoIntentExplicito =
@@ -96,6 +98,26 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener {
                 irActividad(ECrudEntrenador::class.java)
             }
+        val botonRView = findViewById<Button>(R.id.btn_recycler_view)
+        botonRView
+            .setOnClickListener {
+                irActividad(FRecyclerView::class.java)
+            }
+        val botonGoogleMaps = findViewById<Button>(R.id.btn_google_maps)
+        botonGoogleMaps
+            .setOnClickListener {
+                irActividad(GGoogleMapsActivity::class.java)
+            }
+        val botonFirebaseUI = findViewById<Button>(R.id.btn_intent_firebase_ui)
+        botonFirebaseUI
+            .setOnClickListener {
+                irActividad(HFirebaseUIAuth::class.java)
+            }
+        val botonFirestore = findViewById<Button>(R.id.btn_intent_firestore)
+        botonFirestore
+            .setOnClickListener {
+                irActividad(IFirestore::class.java)
+            }
     }// Termina on Create
 
     fun abrirActividadConParametros(
@@ -107,7 +129,12 @@ class MainActivity : AppCompatActivity() {
         intentExplicito.putExtra("apellido","Eguez")
         intentExplicito.putExtra("edad",34)
         callbackContenidoIntentExplicito.launch(intentExplicito)
+
+        intentExplicito.putExtra(
+            "entrenador",BEntrenador(1,"Nombre","Descripcion")
+        )
     }
+
     fun irActividad(
         clase: Class<*>){
         val intent = Intent(this, clase)
