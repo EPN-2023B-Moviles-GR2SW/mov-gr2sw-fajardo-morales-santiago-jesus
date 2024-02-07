@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="opciones_predefinidas">
+        <item>Sexual</item>
+        <item>Asexual</item>
+    </array>
+</resources>

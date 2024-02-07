@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "70898199479",
+    "project_id": "examenplanetas",
+    "storage_bucket": "examenplanetas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70898199479:android:7ebe25ca1614b0f931d632",
+        "android_client_info": {
+          "package_name": "com.example.examenplanetas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgr4SdzIQyczhA0-vBLTyDt4eWK9TINCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

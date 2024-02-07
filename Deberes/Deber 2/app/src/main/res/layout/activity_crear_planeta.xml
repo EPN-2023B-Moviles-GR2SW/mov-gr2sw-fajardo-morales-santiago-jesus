@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_layout_crear_planeta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearPlaneta">
+
+    <EditText
+        android:id="@+id/input_crear_nombre_planeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <EditText
+        android:id="@+id/input_crear_galaxia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Galaxia"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/input_crear_nombre_planeta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_crear_nombre_planeta"
+        app:layout_constraintTop_toBottomOf="@+id/input_crear_nombre_planeta" />
+
+    <EditText
+        android:id="@+id/input_crear_estrella"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Estrella"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/input_crear_galaxia"
+        app:layout_constraintStart_toStartOf="@+id/input_crear_galaxia"
+        app:layout_constraintTop_toBottomOf="@+id/input_crear_galaxia" />
+
+    <EditText
+        android:id="@+id/input_crear_masa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Masa"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/input_crear_estrella"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/input_crear_estrella"
+        app:layout_constraintTop_toBottomOf="@+id/input_crear_estrella" />
+
+    <EditText
+        android:id="@+id/input_crear_edad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Edad"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/input_crear_masa"
+        app:layout_constraintStart_toStartOf="@+id/input_crear_masa"
+        app:layout_constraintTop_toBottomOf="@+id/input_crear_masa" />
+
+    <Button
+        android:id="@+id/btn_aceptar_crear_planeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cancelar_crear_planeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_aceptar_crear_planeta"
+        app:layout_constraintEnd_toStartOf="@+id/btn_aceptar_crear_planeta"
+        app:layout_constraintTop_toTopOf="@+id/btn_aceptar_crear_planeta" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Crear planeta"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
